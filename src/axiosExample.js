@@ -31,6 +31,7 @@ export default{
     fetchData : function(){
         axios.get('https://api.coindesk.com/v1/bpi/historical/close.json').then(response=>{
         this.results=response.data.bpi
+        //console.log(this.results)
         
         for(let key in this.results){
             this.chartdata.datasets[0].data.push(this.results[key])

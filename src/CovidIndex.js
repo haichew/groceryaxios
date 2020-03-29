@@ -10,12 +10,12 @@ export default{
           labels:[],
           datasets: [
             {
-              label: 'PSI Readings-Singapore',
+              label: 'Covid Cases-USA',
                data:[],
               //backgroundColor:['aqua','lightgreen','red','orange'],
               borderWidth:0.5,
-              borderColor:"orange",
-              backgroundColor:'orange',
+              borderColor:"blue",
+              backgroundColor:'blue',
               fill:false
             }
           ]
@@ -36,8 +36,8 @@ export default{
     methods:{
     
     fetchData : function(){
-        axios.get('https://api.data.gov.sg/v1/environment/psi').then(response=>{
-        this.results=response.data.items[0].readings.psi_twenty_four_hourly
+        axios.get('http://covid19.soficoop.com/country/us').then(response=>{
+        this.results=response.data.snapshots[0]
         console.log(response.data)
         console.log(this.results)
         for(let key in this.results){
